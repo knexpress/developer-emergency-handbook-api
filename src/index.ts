@@ -19,7 +19,8 @@ const mode: GatewayMode =
       ? "production"
       : "live";
 const host = process.env.DEH_HOST ?? "0.0.0.0";
-const port = Number(process.env.DEH_PORT ?? 43124);
+// Render (and most hosts) inject PORT. Prefer that, then DEH_PORT, then local default.
+const port = Number(process.env.PORT ?? process.env.DEH_PORT ?? 43124);
 const retentionIntervalMs = Number(process.env.DEH_RETENTION_INTERVAL_MS ?? 60_000);
 const syncIntervalMs = Number(process.env.DEH_SYNC_INTERVAL_MS ?? 60_000);
 const dataPath = resolve(process.env.DEH_DATA_PATH ?? "./data/gateway-state.json");
