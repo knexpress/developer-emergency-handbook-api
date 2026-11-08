@@ -1,0 +1,25 @@
+{
+  "name": "@deh/api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Gateway for Developer Emergency Handbook. Owns connection secrets, Backend_errors retention, and the reward ledger.",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "start": "tsx src/index.ts",
+    "test": "node scripts/run-tests.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.6",
+    "hono": "^4.10.4",
+    "mongodb": "^7.8.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
